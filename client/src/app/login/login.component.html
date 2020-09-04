@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div
+      class="col bg-secondary d-flex flex-column justify-content-center align-items-center"
+     >
+      <div>
+        <fa-icon [icon]="facar" style="font-size: 54px"></fa-icon>
+      </div>
+      <div class="h3">Welcome to AutoHaven</div>
+      <div class="h6" style="font-size:22px;color:white;font-family: cursive;">
+        AutoHaven is the best car research app in India to buy, sell and compare cars.
+         It gives you in-depth information, price alerts and offers about new cars, used cars.
+         You can compare any two cars to decide which car to buy.
+      </div>
+    </div>
+
+    <!-- Right Block-->
+    <div
+      class="col bg-light d-flex flex-column justify-content-center align-items-center"
+      [formGroup]="fbFormGroup"
+    >
+      <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+        Invalid Credential ,Please provide correct details!
+      </div>
+
+      <div class="h4">Application Login</div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          class="form-control"
+          formControlName="username"
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          type="password"
+          placeholder="Enter Password"
+          class="form-control"
+          formControlName="password"
+        />
+      </div>
+
+      <button
+        class="btn btn-sm btn-warning mt-2 mb-2"
+        [disabled]="!fbFormGroup.valid"
+        (click)="loginProcessHere()"
+      >
+        Login Here
+      </button>
+
+      <a routerLink="/register">Register Here</a>
+    </div>
+  </div>
+</div>

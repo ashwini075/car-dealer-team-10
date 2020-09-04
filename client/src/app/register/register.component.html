@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh">
+      <!-- Left Block -->
+      <div
+        class="col bg-light d-flex flex-column justify-content-center align-items-center"
+        [formGroup]="fbFormGroup"
+      >
+        <div class="alert alert-danger" role="alert" *ngIf="unInvalidCrediential">
+          Invalid credientials!
+        </div>
+  
+        <div class="h4" style="font-size:34px;margin-bottom: 15px;"> Registeration Form</div>
+  
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            class="form-control"
+            formControlName="username"
+          />
+        </div>
+  
+        <div class="mt-1">
+          <input
+            type="password"
+            placeholder="Enter Password"
+            class="form-control"
+            formControlName="password"
+          />
+        </div>
+  
+        <div class="mt-1">
+          <input
+            type="email"
+            placeholder="Enter Email"
+            class="form-control"
+            formControlName="email"
+          />
+        </div>
+  
+        <div class="mt-1">
+          <input
+            type="text"
+            placeholder="Enter Mobile"
+            class="form-control"
+            formControlName="mobile"
+          />
+        </div>
+  
+        <button
+          class="btn btn-sm btn-warning mt-2 mb-2"
+          [disabled]="!fbFormGroup.valid"
+          (click)="registerHere()"
+        >
+          Register Here
+        </button>
+        Already Registered ? <a routerLink="/login">Login Here</a>
+        
+        
+      </div>
+  
+      <!-- Right Block-->
+      <div class="col-6 ">
+        <img class="img-fluid" src="./assets/b1.jpeg" style="width:100vh;height:100vh;object-fit:cover;"/>
+      </div>
+    </div>
+  </div>
