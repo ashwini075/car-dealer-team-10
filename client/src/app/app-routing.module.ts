@@ -20,7 +20,7 @@ const routes: Routes = [
 ],},
 { path: 'register',component:RegisterComponent},
 { path:'contact-us',component:ContactUsComponent},
-{ path:'',redirectTo:'/login',pathMatch:'full'},
+{ path:'',redirectTo:'/home',pathMatch:'full'},
 { path: '**', component: PageNotFoundComponent },
 
 ];
